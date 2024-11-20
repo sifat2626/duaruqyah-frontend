@@ -11,7 +11,17 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        inter: '"Inter", "sans-serif"',
+        poppins: '"Poppins", "sans-serif"',
+        meQuran: ["Me_Quran", "serif"],
+      },
+      screens: {
+        md: "768px",
+        lg: "1140px",
+        xl: "1280px",
+      },
     },
   },
   plugins: [],
-};
+}

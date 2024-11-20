@@ -1,21 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Me_Quran";
+  src: url("/fonts/Me_Quran.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* For Webkit Browsers */
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Adjust width as needed */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Scrollbar track color */
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background: #a8a8a8; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #888; /* Optional: darker shade on hover */
+}
+
+/* For Firefox */
+.sidebar-scrollbar {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #a8a8a8 #f1f1f1; /* Thumb and track colors */
 }
