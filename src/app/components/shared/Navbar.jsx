@@ -26,12 +26,12 @@ function Navbar() {
               placeholder="Search by Dua Name"
               className="placeholder:text-[#868686] px-4 py-4 w-96 rounded-xl bg-[#F3F4F6] xl:bg-white"
             />
-            <div className="-ml-16  px-4 py-3 rounded-xl">
+            <div className="-ml-16  px-4 py-3 rounded-xl xl:bg-[#F3F4F6] bg-white">
               <Image src={search} />
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <Image src={person} />
+            <Image src={person} className="size-12" />
             <Image src={dropdown} />
           </div>
         </div>
