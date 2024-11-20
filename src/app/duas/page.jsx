@@ -1,9 +1,5 @@
-function page() {
-  return (
-    <div>
-      <p>duas</p>
-    </div>
-  )
-}
+import { redirect } from "next/navigation"
 
-export default page
+export default function DuasPage() {
+  redirect(`/duas/dua's-importance?cat=1`)
+}

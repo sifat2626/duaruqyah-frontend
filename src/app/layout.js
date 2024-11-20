@@ -5,12 +5,23 @@ import "./globals.css"
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`font-inter`}>
-        <div className="flex gap-2 xl:flex-row flex-col-reverse justify-between min-h-screen bg-[#EBEEF2]">
-          <Sidebar />
-          <div className="flex-1">
-            <Navbar />
-            <div className="">{children}</div>
+      <body className="font-inter">
+        {/* Outer container limited to screen height */}
+        <div className="flex h-screen bg-[#EBEEF2] overflow-hidden">
+          {/* Sidebar fixed to screen height */}
+          <div className=" h-full">
+            <Sidebar />
+          </div>
+
+          {/* Main content container */}
+          <div className="flex flex-1 flex-col h-full">
+            {/* Navbar with fixed height */}
+            <div className="">
+              <Navbar />
+            </div>
+
+            {/* Scrollable main content below Navbar */}
+            <div className="overflow-hidden">{children}</div>
           </div>
         </div>
       </body>
