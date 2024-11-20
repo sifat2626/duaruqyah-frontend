@@ -8,9 +8,9 @@ export default function RootLayout({ children }) {
       <body className={`font-inter`}>
         <div className="flex gap-2 xl:flex-row flex-col-reverse justify-between min-h-screen bg-[#EBEEF2]">
           <Sidebar />
-          <div className="">
+          <div className="flex-1">
             <Navbar />
-            {children}
+            <div className="">{children}</div>
           </div>
         </div>
       </body>
