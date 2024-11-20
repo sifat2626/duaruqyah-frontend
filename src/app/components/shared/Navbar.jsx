@@ -13,7 +13,7 @@ function Navbar() {
             Duas Page
           </h3>
           <div className="xl:hidden flex items-center gap-2">
-            <Image src={dua} className="size-12" />
+            <Image alt="" src={dua} className="size-12" />
             <h3 className="font-poppins text-xl xl:text-2xl xl:font-semibold font-medium text-[#393939] ">
               Dua & Ruqyah
             </h3>
@@ -27,12 +27,12 @@ function Navbar() {
               className="placeholder:text-[#868686] px-4 py-4 w-96 rounded-xl bg-[#F3F4F6] xl:bg-white"
             />
             <div className="-ml-16  px-4 py-3 rounded-xl xl:bg-[#F3F4F6] bg-white">
-              <Image src={search} />
+              <Image alt="" src={search} />
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <Image src={person} className="size-12" />
-            <Image src={dropdown} />
+            <Image alt="" src={person} className="size-12" />
+            <Image alt="" src={dropdown} />
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@ export default function CategoriesList({ categories }) {
             className="w-full p-3 border-2  rounded-lg pl-12 focus:outline-none focus:border-2 focus:border-[#1FA45B]"
           ></input>
           <Image
+            alt=""
             src={search}
             className="absolute top-1/2 left-8 -translate-y-1/2 bg-white"
           />
@@ -30,7 +31,7 @@ export default function CategoriesList({ categories }) {
 
         {categories.map((category) => (
           <div className="py-6">
-            <CategoryCard key={category.id} category={category} />
+            <CategoryCard key={category.cat_id} category={category} />
           </div>
         ))}
       </div>

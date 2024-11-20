@@ -16,29 +16,29 @@ function Sidebar() {
           <Image src={dua} alt="dua image" className="size-12" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10 flex justify-center items-center">
-          <Image src={home} className="" />
+          <Image alt="" src={home} className="" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10 flex justify-center items-center">
-          <Image src={menu} className="" />
+          <Image alt="" src={menu} className="" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10 flex justify-center items-center">
-          <Image src={bulb} className="" />
+          <Image alt="" src={bulb} className="" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10 flex justify-center items-center">
-          <Image src={bookmark} className="" />
+          <Image alt="" src={bookmark} className="" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10 flex justify-center items-center">
-          <Image src={ruqyah} className="" />
+          <Image alt="" src={ruqyah} className="" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10  justify-center items-center hidden xl:flex">
-          <Image src={duaInfo} className="" />
+          <Image alt="" src={duaInfo} className="" />
         </div>
         <div className="bg-[#E8F0F5] hover:scale-105 transition-all cursor-pointer rounded-full p-2  size-10  justify-center items-center hidden xl:flex">
-          <Image src={books} className="" />
+          <Image alt="" src={books} className="" />
         </div>
         <div className="xl:my-12 hidden xl:block">
           <div className="bg-[#1FA45B] cursor-pointer rounded-lg p-2  size-12 flex justify-center items-center">
-            <Image src={donateHeart} className="" />
+            <Image alt="" src={donateHeart} className="" />
           </div>
         </div>
       </div>

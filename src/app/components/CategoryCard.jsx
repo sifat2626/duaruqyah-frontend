@@ -9,7 +9,7 @@ function CategoryCard({ category }) {
     no_of_subcat,
   } = category
 
-  console.log(cat_id)
+  // console.log(cat_id)
   return (
     <div>
       <h3>{cat_name_en}</h3>
