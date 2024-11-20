@@ -1,10 +1,12 @@
 import CategoriesList from "@/app/components/CategoryList"
+import { getCategories } from "@/app/services/CategoryServices"
 
-function page() {
+async function page() {
+  const categories = await getCategories()
   return (
     <div>
       <div className="">
-        <CategoriesList />
+        <CategoriesList categories={categories} />
       </div>
     </div>
   )
