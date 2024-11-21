@@ -10,7 +10,7 @@ import duaInfo from "@/assets/images/sidebar/dua-info.svg"
 import Image from "next/image"
 function Sidebar() {
   return (
-    <div className="xl:max-h-[calc(100vh-48px)] xl:overflow-y-scroll sidebar-scrollbar xl:m-6 bg-white xl:py-8 xl:px-5 xl:rounded-3xl rounded-t-3xl">
+    <div className="xl:h-[calc(100vh-48px)] xl:overflow-y-scroll sidebar-scrollbar xl:m-6 bg-white xl:py-8 xl:px-5 xl:rounded-3xl rounded-t-3xl z-2">
       <div className="flex xl:flex-col flex-row xl:gap-7 justify-between px-6 py-4 xl:px-0 xl:py-0">
         <div className="cursor-pointer xl:mb-12 xl:block hidden">
           <Image src={dua} alt="dua image" className="size-12" />

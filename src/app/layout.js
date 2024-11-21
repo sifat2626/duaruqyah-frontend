@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="font-inter">
         {/* Outer container limited to screen height */}
-        <div className="flex h-screen bg-[#EBEEF2] overflow-hidden">
+        <div className="flex xl:flex-row flex-col-reverse h-screen bg-[#EBEEF2] overflow-y-auto">
           {/* Sidebar fixed to screen height */}
           <div className=" h-full">
             <Sidebar />
