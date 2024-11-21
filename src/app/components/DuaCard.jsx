@@ -5,6 +5,7 @@ import share from "@/assets/images/dua/share.svg"
 import bookmark from "@/assets/images/sidebar/bookmark.svg"
 import bulb from "@/assets/images/sidebar/bulb.svg"
 import Image from "next/image"
+import CustomAudioPlayer from "./CustomAudioPlayer"
 
 const icons = [
   { src: copy, title: "Copy" },
@@ -22,6 +23,7 @@ function DuaCard({ dua }) {
     dua_arabic,
     transliteration_en,
     translation_en,
+    audio,
   } = dua
   return (
     <div className="px-8 py-4 mb-4 bg-white rounded-lg">
@@ -39,7 +41,10 @@ function DuaCard({ dua }) {
         </div>
         {dua_arabic && (
           <div className="text-right">
-            <h3 className="text-[#2e2e2e] font-meQuran text-3xl font-extrabold leading-[56px] tracking-wider">
+            <h3
+              style={{ wordSpacing: "0.6em" }}
+              className="text-gray-900  font-meQuran text-2xl leading-[56px]"
+            >
               {dua_arabic}
             </h3>
           </div>
@@ -61,7 +66,10 @@ function DuaCard({ dua }) {
             </h3>
           </div>
         )}
-        <div className="flex justify-end gap-10">
+        <div className="flex justify-between gap-10">
+          <div className="flex-1">
+            {audio && <CustomAudioPlayer audioSrc={audio} />}
+          </div>
           {icons.map((icon, index) => (
             <div key={index} className="relative group">
               <Image
