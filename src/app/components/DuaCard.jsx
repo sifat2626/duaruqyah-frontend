@@ -35,10 +35,7 @@ function DuaCard({ dua }) {
         <div className="">
           <p className="text-[#393939]">{top_en}</p>
         </div>
-        <div className="">
-          <h3 className="font-semibold text-[#1FA45B]">Reference:</h3>
-          <p className="text-[#393939] font-medium">{refference_en}</p>
-        </div>
+
         {dua_arabic && (
           <div className="text-right">
             <h3
@@ -66,9 +63,15 @@ function DuaCard({ dua }) {
             </h3>
           </div>
         )}
-        <div className="flex justify-between gap-10">
+
+        <div className="">
+          <h3 className="font-semibold text-[#1FA45B]">Reference:</h3>
+          <p className="text-[#393939] font-medium">{refference_en}</p>
+        </div>
+
+        <div className="flex justify-between gap-10 items-center">
           <div className="flex-1">
-            {audio && <CustomAudioPlayer audioSrc={audio} />}
+            {audio && <CustomAudioPlayer src={audio} />}
           </div>
           {icons.map((icon, index) => (
             <div key={index} className="relative group">
