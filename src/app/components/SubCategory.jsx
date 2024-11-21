@@ -20,8 +20,13 @@ function SubCategory({ sub }) {
   }, [])
 
   return (
-    <div>
-      <h3>{sub.subcat_name_en}</h3>
+    <div className="">
+      <div className="bg-white py-4 px-8 rounded-lg mb-4">
+        <h3 className="text-[#393939]">
+          <span className="text-[#1FA45B] font-semibold mr-2.5">Section:</span>{" "}
+          {sub.subcat_name_en}
+        </h3>
+      </div>
       {duas.map((dua) => (
         <DuaCard dua={dua} key={dua.dua_id} />
       ))}

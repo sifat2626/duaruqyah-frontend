@@ -70,7 +70,7 @@ function Page() {
         <CategoriesList categories={categories} subCategories={subCategories} />
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 h-[calc(100vh-112px)] overflow-y-auto sidebar-scrollbar pr-1">
         {subCategories.map((sub) => (
           <SubCategory sub={sub} key={sub.subcat_id} />
         ))}

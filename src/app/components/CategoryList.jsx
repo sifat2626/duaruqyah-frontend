@@ -6,7 +6,7 @@ import CategoryCard from "./CategoryCard"
 export default function CategoriesList({ categories, subCategories }) {
   // console.log(categories)
   return (
-    <div className="w-[400px] flex flex-col h-[calc(100vh-112px)]">
+    <div className="w-[400px] flex flex-col h-[calc(100vh-112px)] ">
       {/* Header (fixed height) */}
       <div className="bg-[#1FA45B] rounded-t-xl">
         <h2 className="text-white text-center w-full py-5 text-lg font-medium">
@@ -15,7 +15,7 @@ export default function CategoriesList({ categories, subCategories }) {
       </div>
 
       {/* Scrollable list */}
-      <div className=" flex-1 bg-white overflow-y-auto rounded-b-xl">
+      <div className=" flex-1 bg-white overflow-y-auto rounded-b-xl sidebar-scrollbar">
         <div className="relative p-4">
           <input
             type="text"
