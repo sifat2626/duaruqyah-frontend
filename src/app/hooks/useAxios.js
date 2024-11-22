@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export const axiosCommon = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: "https://duaruqyah-backend-dn58.onrender.com/api/v1",
 })
