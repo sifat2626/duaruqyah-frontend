@@ -67,7 +67,7 @@ function Page() {
     <div className="flex gap-8">
       {/* Categories Sidebar */}
       <div className="w-[400px]">
-        <CategoriesList categories={categories} />
+        <CategoriesList categories={categories} subCategories={subCategories} />
       </div>
 
       <div className="flex-1 h-[calc(100vh-112px)] overflow-y-auto sidebar-scrollbar pr-1">

@@ -1,11 +1,15 @@
 import { useSearchParams } from "next/navigation"
+<<<<<<< HEAD
 import Timeline from "./Timeline"
 import Image from "next/image"
 import fever from "@/assets/images/category/fever.png"
 import { useEffect, useState } from "react"
 import { getSubcategoriesByCategory } from "../services/SubCategoryService"
+import { useRouter } from "next/navigation"
+=======
+>>>>>>> parent of 175694c (dua by sub category)
 
-function CategoryCard({ category }) {
+function CategoryCard({ category, subCategories }) {
   const {
     cat_icon,
     cat_id,
@@ -17,7 +21,9 @@ function CategoryCard({ category }) {
   } = category
 
   const searchParams = useSearchParams()
+  const router = useRouter()
   const categoryId = searchParams.get("cat")
+<<<<<<< HEAD
 
   const [subCategories, setSubCategories] = useState([])
   useEffect(() => {
@@ -33,9 +39,25 @@ function CategoryCard({ category }) {
     }
     fetchSubCategories()
   }, [])
+
+  function handleCategory(id) {
+    const params = new URLSearchParams(window.location.search)
+    params.set("cat", id)
+    router.push(`?${params.toString()}`)
+  }
+
   return (
-    <div className="">
-      <div className="bg-[#E8F0F5] p-2.5 mx-4 rounded-lg">
+    <div
+      className="cursor-pointer"
+      onClick={() => {
+        handleCategory(cat_id)
+      }}
+    >
+      <div
+        className={`${
+          cat_id === categoryId * 1 ? "bg-[#E8F0F5]" : "bg-white"
+        } p-2.5 mx-4 rounded-lg mb-2.5`}
+      >
         <div className="flex gap-4 items-center">
           <div className="bg-[#CFE0E5] p-2.5 rounded-lg">
             <Image src={fever} />
@@ -54,6 +76,12 @@ function CategoryCard({ category }) {
           <Timeline subCategories={subCategories} />
         </div>
       )}
+=======
+  return (
+    <div>
+      <h3>{cat_name_en}</h3>
+      {categoryId * 1 === cat_id ? subCategories.length : ""}
+>>>>>>> parent of 175694c (dua by sub category)
     </div>
   )
 }
