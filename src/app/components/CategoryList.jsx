@@ -2,8 +2,9 @@
 import search from "@/assets/images/navbar/search.svg"
 import Image from "next/image"
 import CategoryCard from "./CategoryCard"
+import Timeline from "./Timeline"
 
-export default function CategoriesList({ categories, subCategories }) {
+export default function CategoriesList({ categories }) {
   // console.log(categories)
   return (
     <div className="w-[400px] flex flex-col h-[calc(100vh-112px)] ">
@@ -30,12 +31,8 @@ export default function CategoriesList({ categories, subCategories }) {
         </div>
 
         {categories.map((category) => (
-          <div className="py-6">
-            <CategoryCard
-              key={category.cat_id}
-              category={category}
-              subCategories={subCategories}
-            />
+          <div className="">
+            <CategoryCard key={category.cat_id} category={category} />
           </div>
         ))}
       </div>
