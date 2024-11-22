@@ -1,6 +1,7 @@
 import Navbar from "./components/shared/Navbar"
 import Sidebar from "./components/shared/Sidebar"
 import "./globals.css"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 export default function RootLayout({ children }) {
   return (
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
             </div>
 
             {/* Scrollable main content below Navbar */}
-            <div className="overflow-hidden">{children}</div>
+            <div className="overflow-hidden">
+              <NuqsAdapter>{children}</NuqsAdapter>
+            </div>
           </div>
         </div>
       </body>

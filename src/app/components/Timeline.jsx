@@ -1,21 +1,21 @@
 "use client"
 
-import { useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import DuaBySub from "./DuaBySub.jsx"
 import { getDuasBySubCategory } from "../services/DuaServices"
+import { useQueryState } from "nuqs"
 
 const Timeline = ({ subCategories }) => {
   const [duas, setDuas] = useState([])
   const router = useRouter()
+  const pathName = usePathname()
   const searchParams = useSearchParams()
   const currentSubcat = searchParams.get("subcat")
+  const [subcat, setSubcat] = useQueryState("subcat")
 
   const handleDuaBySub = (id) => {
-    // Use URLSearchParams for a clean URL update
-    const params = new URLSearchParams(searchParams.toString())
-    params.set("subcat", id) // Set the new subcat value
-    router.push(`?${params.toString()}`) // Navigate to the updated URL
+    setSubcat(id)
   }
 
   useEffect(() => {

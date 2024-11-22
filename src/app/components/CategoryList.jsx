@@ -31,11 +31,7 @@ export default function CategoriesList({ categories, subCategories }) {
 
         {categories.map((category) => (
           <div className="">
-            <CategoryCard
-              key={category.cat_id}
-              category={category}
-              subCategories={subCategories}
-            />
+            <CategoryCard key={category.cat_id} category={category} />
           </div>
         ))}
       </div>

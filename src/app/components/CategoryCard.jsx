@@ -36,13 +36,19 @@ function CategoryCard({ category }) {
     fetchSubCategories()
   }, [categoryId, cat_id])
 
-  function handleCategory() {
-    // const params = new URLSearchParams(window.location.search)
-    // params.set("cat", cat_id)
-    // router.push(`?${params.toString()}`)
+  function handleCategory(id) {
     router.push(
       `/duas/${cat_name_en.toLowerCase().replaceAll(" ", "-")}/?cat=${cat_id}`
     )
+  }
+
+  function handleDuaBySub(id) {
+    const searchParams = new URLSearchParams(window.location.search)
+    searchParams.set("subcat", id)
+    console.log(`Navigating to: ?${searchParams.toString()}`)
+
+    // Use router.push to update the URL
+    // router.push(`?${searchParams.toString()}`)
   }
 
   return (
@@ -66,7 +72,10 @@ function CategoryCard({ category }) {
       </div>
       {categoryId * 1 === cat_id && (
         <div className="ml-8">
-          <Timeline subCategories={subCategories} />
+          <Timeline
+            subCategories={subCategories}
+            handleCategory={handleCategory}
+          />
         </div>
       )}
     </div>
