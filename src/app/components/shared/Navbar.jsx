@@ -4,6 +4,7 @@ import search from "@/assets/images/navbar/search.svg"
 import dua from "@/assets/images/sidebar/dua.png"
 import dropdown from "@/assets/images/navbar/dropdown.svg"
 import { FaGear } from "react-icons/fa6"
+import Settings from "../Settings"
 
 function Navbar() {
   return (
@@ -58,12 +59,7 @@ function Navbar() {
                 ></label>
                 <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                   {/* Sidebar content here */}
-                  <li>
-                    <a>Sidebar Item 1</a>
-                  </li>
-                  <li>
-                    <a>Sidebar Item 2</a>
-                  </li>
+                  <Settings />
                 </ul>
               </div>
             </div>
