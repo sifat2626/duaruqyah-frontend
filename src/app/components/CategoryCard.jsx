@@ -1,5 +1,5 @@
 "use client"
-import { useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import Timeline from "./Timeline"
 import Image from "next/image"
 import fever from "@/assets/images/category/fever.png"
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import { getSubcategoriesByCategory } from "../services/SubCategoryService"
 
 function CategoryCard({ category }) {
+  const pathname = usePathname()
   const {
     cat_icon,
     cat_id,
@@ -26,10 +27,8 @@ function CategoryCard({ category }) {
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
-        if (categoryId && categoryId * 1 === cat_id) {
-          const subCategoryData = await getSubcategoriesByCategory(cat_id)
-          setSubCategories(subCategoryData)
-        }
+        const subCategoryData = await getSubcategoriesByCategory(cat_id)
+        setSubCategories(subCategoryData)
       } catch (error) {
         console.error("Error fetching subcategories", error)
       }
@@ -38,9 +37,12 @@ function CategoryCard({ category }) {
   }, [categoryId, cat_id])
 
   function handleCategory() {
-    const params = new URLSearchParams(window.location.search)
-    params.set("cat", cat_id)
-    router.push(`?${params.toString()}`)
+    // const params = new URLSearchParams(window.location.search)
+    // params.set("cat", cat_id)
+    // router.push(`?${params.toString()}`)
+    router.push(
+      `/duas/${cat_name_en.toLowerCase().replaceAll(" ", "-")}/?cat=${cat_id}`
+    )
   }
 
   return (
