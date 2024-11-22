@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react"
+import { useSearchParams } from "next/navigation"
 import duaIcon from "@/assets/images/dua/duaIcon.svg"
 import copy from "@/assets/images/dua/copy.svg"
 import report from "@/assets/images/dua/report.svg"
@@ -16,7 +18,11 @@ const icons = [
 ]
 
 function DuaCard({ dua }) {
+  const searchParams = useSearchParams()
+  const duaRef = useRef(null)
+
   const {
+    dua_id, // Assuming `dua` has an `id` field
     dua_name_en,
     top_en,
     refference_en,
@@ -25,14 +31,27 @@ function DuaCard({ dua }) {
     translation_en,
     audio,
   } = dua
+
+  // Scroll to the dua if the query matches its ID
+  useEffect(() => {
+    const queryDuaId = searchParams.get("dua")
+    if (queryDuaId && Number(queryDuaId) === dua_id && duaRef.current) {
+      duaRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }, [searchParams, dua_id])
+
   return (
-    <div className="px-8 py-4 mb-4 bg-white rounded-lg">
+    <div
+      ref={duaRef}
+      id={`dua-${dua_id}`}
+      className="px-8 py-4 mb-4 bg-white rounded-lg"
+    >
       <div className="flex flex-col gap-7">
         <div className="flex gap-2.5 items-center ">
           <Image src={duaIcon} alt="dua icon" />
           <h3 className="text-[#1FA45B] font-semibold">{dua_name_en}</h3>
         </div>
-        <div className="">
+        <div>
           <p className="text-[#393939]">{top_en}</p>
         </div>
 
@@ -40,7 +59,7 @@ function DuaCard({ dua }) {
           <div className="text-right">
             <h3
               style={{ wordSpacing: "0.6em" }}
-              className="text-gray-900  font-meQuran text-2xl leading-[56px]"
+              className="text-gray-900 font-meQuran text-2xl leading-[56px]"
             >
               {dua_arabic}
             </h3>
@@ -49,22 +68,22 @@ function DuaCard({ dua }) {
         {transliteration_en && (
           <div className="text-gray-800 italic text-lg font-medium">
             <h3>
-              <span className=" font-semibold">Transliteration: </span>
+              <span className="font-semibold">Transliteration: </span>
               {transliteration_en}
             </h3>
           </div>
         )}
 
         {translation_en && (
-          <div className="">
+          <div>
             <h3 className="text-gray-700 font-medium text-lg">
-              <span className="font-semibold">Translation: </span>{" "}
+              <span className="font-semibold">Translation: </span>
               {translation_en}
             </h3>
           </div>
         )}
 
-        <div className="">
+        <div>
           <h3 className="font-semibold text-[#1FA45B]">Reference:</h3>
           <p className="text-[#393939] font-medium">{refference_en}</p>
         </div>
