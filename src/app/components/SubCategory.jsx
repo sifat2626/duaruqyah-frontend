@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react"
 import { getDuasBySubCategory } from "../services/DuaServices"
 import DuaCard from "./DuaCard"

@@ -22,7 +22,7 @@ function Navbar() {
           </div>
         </div>
         <div className="flex items-center gap-12 ml-auto">
-          <div className=" items-center hidden md:flex">
+          <div className=" items-center hidden md:flex mr-8">
             <input
               type="text"
               placeholder="Search by Dua Name"
@@ -34,7 +34,12 @@ function Navbar() {
           </div>
           <div className="flex gap-8 items-center">
             <div className="flex items-center gap-1 cursor-pointer -mr-16">
-              <Image alt="" src={person} height={96} />
+              <Image
+                alt=""
+                src={person}
+                height={96}
+                className="hidden lg:block"
+              />
               <Image alt="" src={dropdown} />
             </div>
             <div className="drawer drawer-end">

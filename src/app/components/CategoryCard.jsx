@@ -21,6 +21,8 @@ function CategoryCard({ category }) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const categoryId = searchParams.get("cat")
+  // const [cat, setCat] = useQueryState("subcat")
+  // const [subcat, setSubcat] = useQueryState("subcat")
 
   const [subCategories, setSubCategories] = useState([])
 
@@ -40,15 +42,6 @@ function CategoryCard({ category }) {
     router.push(
       `/duas/${cat_name_en.toLowerCase().replaceAll(" ", "-")}/?cat=${cat_id}`
     )
-  }
-
-  function handleDuaBySub(id) {
-    const searchParams = new URLSearchParams(window.location.search)
-    searchParams.set("subcat", id)
-    console.log(`Navigating to: ?${searchParams.toString()}`)
-
-    // Use router.push to update the URL
-    // router.push(`?${searchParams.toString()}`)
   }
 
   return (
