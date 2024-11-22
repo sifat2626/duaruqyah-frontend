@@ -1,15 +1,12 @@
-import { useSearchParams } from "next/navigation"
-<<<<<<< HEAD
+"use client"
+import { useRouter, useSearchParams } from "next/navigation"
 import Timeline from "./Timeline"
 import Image from "next/image"
 import fever from "@/assets/images/category/fever.png"
 import { useEffect, useState } from "react"
 import { getSubcategoriesByCategory } from "../services/SubCategoryService"
-import { useRouter } from "next/navigation"
-=======
->>>>>>> parent of 175694c (dua by sub category)
 
-function CategoryCard({ category, subCategories }) {
+function CategoryCard({ category }) {
   const {
     cat_icon,
     cat_id,
@@ -20,39 +17,34 @@ function CategoryCard({ category, subCategories }) {
     no_of_subcat,
   } = category
 
-  const searchParams = useSearchParams()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const categoryId = searchParams.get("cat")
-<<<<<<< HEAD
 
   const [subCategories, setSubCategories] = useState([])
+
   useEffect(() => {
     const fetchSubCategories = async () => {
       try {
-        if (categoryId) {
-          const subCategoryData = await getSubcategoriesByCategory(cat_id * 1)
+        if (categoryId && categoryId * 1 === cat_id) {
+          const subCategoryData = await getSubcategoriesByCategory(cat_id)
           setSubCategories(subCategoryData)
         }
       } catch (error) {
-        console.error("Error fetching subcategories")
+        console.error("Error fetching subcategories", error)
       }
     }
     fetchSubCategories()
-  }, [])
+  }, [categoryId, cat_id])
 
-  function handleCategory(id) {
+  function handleCategory() {
     const params = new URLSearchParams(window.location.search)
-    params.set("cat", id)
+    params.set("cat", cat_id)
     router.push(`?${params.toString()}`)
   }
 
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => {
-        handleCategory(cat_id)
-      }}
-    >
+    <div className="cursor-pointer" onClick={handleCategory}>
       <div
         className={`${
           cat_id === categoryId * 1 ? "bg-[#E8F0F5]" : "bg-white"
@@ -60,7 +52,7 @@ function CategoryCard({ category, subCategories }) {
       >
         <div className="flex gap-4 items-center">
           <div className="bg-[#CFE0E5] p-2.5 rounded-lg">
-            <Image src={fever} />
+            <Image src={fever} alt="Category Icon" />
           </div>
           <div className="flex-1">
             <h3 className="text-[#393939] font-semibold">{cat_name_en}</h3>
@@ -68,7 +60,6 @@ function CategoryCard({ category, subCategories }) {
               Subcategory: {subCategories.length}
             </p>
           </div>
-          <div className=""></div>
         </div>
       </div>
       {categoryId * 1 === cat_id && (
@@ -76,12 +67,6 @@ function CategoryCard({ category, subCategories }) {
           <Timeline subCategories={subCategories} />
         </div>
       )}
-=======
-  return (
-    <div>
-      <h3>{cat_name_en}</h3>
-      {categoryId * 1 === cat_id ? subCategories.length : ""}
->>>>>>> parent of 175694c (dua by sub category)
     </div>
   )
 }

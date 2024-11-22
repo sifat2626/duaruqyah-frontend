@@ -30,7 +30,7 @@ export default function CategoriesList({ categories, subCategories }) {
         </div>
 
         {categories.map((category) => (
-          <div className="py-6">
+          <div className="">
             <CategoryCard
               key={category.cat_id}
               category={category}
