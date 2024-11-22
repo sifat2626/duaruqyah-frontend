@@ -1,6 +1,5 @@
 "use client"
 import CategoriesList from "@/app/components/CategoryList"
-import DuasList from "@/app/components/DuaList"
 import Drawer from "@/app/components/shared/Drawer"
 import SubCategory from "@/app/components/SubCategory"
 import { useDebounce } from "@/app/hooks/useDebounce"

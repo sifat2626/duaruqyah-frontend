@@ -3,7 +3,7 @@ import CategoriesList from "../CategoryList"
 
 function Drawer({ categories, handleSearch }) {
   return (
-    <div className="drawer bg-white my-4 px-6 py-4 rounded-lg z-10">
+    <div className="drawer bg-white my-4 px-6 py-4 rounded-lg z-8">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}

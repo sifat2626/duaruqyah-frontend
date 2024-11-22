@@ -1,7 +1,4 @@
+import { redirect } from "next/navigation"
 export default function Home() {
-  return (
-    <div className="">
-      <p>hello</p>
-    </div>
-  )
+  redirect(`/duas/dua's-importance?cat=1`)
 }
